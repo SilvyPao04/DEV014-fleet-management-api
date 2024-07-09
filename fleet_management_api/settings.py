@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'fleet_management_api.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'verceldb',
+        'USER': 'default',
+        'PASSWORD': 'Hhw3WMY8oFqz',
+        'HOST': 'ep-odd-frost-a1jpf7tg-pooler.ap-southeast-1.aws.neon.tech',
+        'PORT': '5432',
     }
 }
 
