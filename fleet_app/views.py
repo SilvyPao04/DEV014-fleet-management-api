@@ -1,8 +1,16 @@
-from django.shortcuts import render
+"""
+Views for the fleet_app.
+"""
 
-# Create your views here.
+from rest_framework import generics
+from rest_framework.pagination import PageNumberPagination
+from rest_framework.filters import SearchFilter
+from .models import Taxi
+from .serializers import TaxiSerializer
 
-from django.http import HttpResponse
-
-def home(request):
-    return HttpResponse("Welcome to the Fleet Management System!")
+class TaxiListView(generics.ListAPIView):
+    queryset = Taxi.objects.all()
+    serializer_class = TaxiSerializer
+    pagination_class = PageNumberPagination
+    filter_backends = [SearchFilter]
+    search_fields = ['plate']

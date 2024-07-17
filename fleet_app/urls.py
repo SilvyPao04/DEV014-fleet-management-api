@@ -1,9 +1,10 @@
-
+"""
+URL configuration for fleet_app.
+"""
 
 from django.urls import path
-from .views import home
+from .views import TaxiListView
 
 urlpatterns = [
-    path('', home, name='home'),  # Route for the main page
-    # Other routes...
+    path('taxis/', TaxiListView.as_view(), name='taxi-list'),
 ]
