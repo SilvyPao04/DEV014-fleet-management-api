@@ -1,0 +1,8 @@
+[MASTER]
+extension-pkg-whitelist=django
+
+[TYPECHECK]
+ignored-classes=objects
+
+[TYPECHECK]
+ignored-classes=objects,Taxi
